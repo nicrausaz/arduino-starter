@@ -10,21 +10,23 @@ void setup() {
 }
 
 void loop() {
-  // switchState = LOW(-) or HIGH(+)
-  switchState = digitalRead(2);
-  if (switchState == LOW) {
-    digitalWrite(3, HIGH); // Green LED on
-    digitalWrite(4, LOW); // Red LED off
-    digitalWrite(5, LOW); // Red LED off
-
-  } else {
-    digitalWrite(3, LOW);
-    digitalWrite(4, LOW);
-    digitalWrite(5, HIGH);
-
-    delay(250); // sleep 1/4 seconds
-    digitalWrite(4, HIGH);
-    digitalWrite(5, LOW);
-    delay (250);
-  }
+  switchState = digitalRead(2); // switchState = LOW(-) or HIGH(+)
+  switchState == LOW ? resetLeds() : switchLeds();
 }
+
+void resetLeds() {
+  digitalWrite(3, HIGH); // Green LED on
+  digitalWrite(4, LOW); // Red LED off
+  digitalWrite(5, LOW); // Red LED off
+}
+void switchLeds() {
+  digitalWrite(3, LOW);
+  digitalWrite(4, LOW);
+  digitalWrite(5, HIGH);
+
+  delay(250); // sleep 1/4 seconds
+  digitalWrite(4, HIGH);
+  digitalWrite(5, LOW);
+  delay (250);
+}
+
