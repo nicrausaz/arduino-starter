@@ -14,5 +14,5 @@ This first project give us basic usage of electric circuits and theorics about O
 
 Switching LEDs
 
-## Project 3
-Temperature sensor
+## Project 3 (adapted)
+Temperature sensor 

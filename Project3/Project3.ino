@@ -23,5 +23,22 @@ void loop() {
   Serial.print(" ,Celsius ");
   Serial.print(temperature);
 
-  delay(5000);
+  delay(2000);
+
+  if (temperature < baseTemp) {
+    // Less than 20C -- 1LED
+    digitalWrite(3, HIGH);
+    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
+  } else if (temperature >= baseTemp && temperature <= baseTemp + 4) {
+    // Between 20C and 24C -- 2LED
+    digitalWrite(3, HIGH);
+    digitalWrite(4, HIGH);
+    digitalWrite(5, LOW);
+  } else {
+    // More than 24C -- 3LED
+    digitalWrite(3, HIGH);
+    digitalWrite(4, HIGH);
+    digitalWrite(5, HIGH);
+  }
 }
