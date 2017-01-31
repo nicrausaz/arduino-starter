@@ -11,3 +11,8 @@ This first project give us basic usage of electric circuits and theorics about O
 2 buttons, 1 LED (parallel and serial circuits)
 
 ## Project 2
+
+Switching LEDs
+
+## Project 3
+Temperature sensor
