@@ -28,25 +28,34 @@ void loop() {
   blueSensorValue = analogRead(blueSensorPin);
   delay(5);
 
+  printRawValues(redSensorValue, greenSensorValue, blueSensorValue);
+
+  redValue = redSensorValue / 4;
+  greenValue = greenSensorValue / 4;
+  blueValue = blueSensorValue / 4;
+
+  printValues(redValue, greenValue, blueValue);
+
+  analogWrite(redPin, redValue);
+  analogWrite(greenPin, greenValue);
+  analogWrite(bluePin, blueValue);
+}
+
+void printRawValues(redSensorValue, greenSensorValue, blueSensorValue) {
   Serial.print(" Raw sensor values \t Red: ");
   Serial.print(redSensorValue);
   Serial.print("\t Green: ");
   Serial.print(greenSensorValue);
   Serial.print("\t Blue: ");
   Serial.print(blueSensorValue);
+}
 
-  redValue = redSensorValue / 4;
-  greenValue = greenSensorValue / 4;
-  blueValue = blueSensorValue / 4;
-
+void printValues(redValue, greenValue, blueValue) {
   Serial.print(" Values \t Red: ");
   Serial.print(redValue);
   Serial.print("\t Green: ");
   Serial.print(greenValue);
   Serial.print("\t Blue: ");
   Serial.print(blueValue);
-
-  analogWrite(redPin, redValue);
-  analogWrite(greenPin, greenValue);
-  analogWrite(bluePin, blueValue);  
 }
+
