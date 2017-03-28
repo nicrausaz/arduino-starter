@@ -19,3 +19,9 @@ Temperature sensor
 
 ## Project 4
 Use of photoresist and LEDs
+
+## Project 5
+
+Use of servomotor
+
+Doesn't seem to work and the pieces given aren't fitting the board...
